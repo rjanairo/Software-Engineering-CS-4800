@@ -1,0 +1,37 @@
+
+@startuml
+
+object ship1 {
+    name = "Titanic"
+    yearBuilt = "1912"
+}
+
+object ship2 {
+    name = "Sea"
+    yearBuilt = "1987"
+}
+
+object ship3 {
+    name = "Enterprise"
+    yearBuilt = "2100"
+}
+
+object cargoShip1 {
+    name = "CargoMaster"
+    yearBuilt = "2005"
+    cargoCapacityInTonage = 10000
+}
+
+object cruiseShip1 {
+    name = "SeaJewel"
+    yearBuilt = "1999"
+    numberOfPassengers = 2000
+}
+
+Driver -- ship1 : creates & uses >
+Driver -- ship2 : creates & uses >
+Driver -- ship3 : creates & uses >
+Driver -- cargoShip1 : creates & uses >
+Driver -- cruiseShip1 : creates & uses >
+
+@enduml
