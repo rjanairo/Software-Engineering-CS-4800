@@ -1,17 +1,20 @@
 public class Driver {
     public static void main(String[] args) {
+        createAndEatPizza();
+    }
 
-        System.out.println("- Part 1 -");
+    private static void createAndEatPizza() {
+        System.out.println(" Pizza Selection: \n");
 
-        final String pizzaHut = "Pizza Hut";
-
-        Pizza smallPizza = new Pizza.Builder(pizzaHut, Pizza.Size.Small)
+        Pizza smallPizza = new Pizza.Builder(Pizza.Size.Small)
+                .addPizzaChain("Pizza Hut")
                 .addBeef()
                 .addChicken()
                 .addHamAndPineapple()
                 .build();
 
-        Pizza mediumPizza = new Pizza.Builder(pizzaHut, Pizza.Size.Medium)
+        Pizza mediumPizza = new Pizza.Builder(Pizza.Size.Medium)
+                .addPizzaChain("Pizza Hut")
                 .addExtraCheese()
                 .addOlives()
                 .addPepperoni()
@@ -20,7 +23,8 @@ public class Driver {
                 .addSpinach()
                 .build();
 
-        Pizza largePizza = new Pizza.Builder(pizzaHut, Pizza.Size.Large)
+        Pizza largePizza = new Pizza.Builder(Pizza.Size.Large)
+                .addPizzaChain("Pizza Hut")
                 .addTomatoAndBasil()
                 .addMushroom()
                 .addPeppers()
@@ -32,35 +36,10 @@ public class Driver {
                 .addExtraCheese()
                 .build();
 
-        smallPizza.displayDetails();
-        mediumPizza.displayDetails();
-        largePizza.displayDetails();
+        smallPizza.eat();
+        mediumPizza.eat();
+        largePizza.eat();
 
-
-        System.out.println("- Part 2 -");
-
-        displayPizzaHutExamples(pizzaHut);
-        displayLittleCaesarsExamples();
-        displayDominosExamples();
+        // Repeat the structure for Part 2 with descriptive variables
     }
-
-    private static void displayPizzaHutExamples(String pizzaHut) {
-        System.out.println("--- Pizza Hut: ");
-        Pizza largePizzaHut = new Pizza.Builder(pizzaHut, Pizza.Size.Large)
-                .addSpinach()
-                .addBacon()
-                .addPeppers()
-                .build();
-
-        largePizzaHut.displayDetails();
-
-        Pizza smallPizzaHut = new Pizza.Builder(pizzaHut, Pizza.Size.Small)
-                .addPeppers()
-                .addHam()
-                .build();
-
-        smallPizzaHut.displayDetails();
-    }
-
-    private static void displayLittleCaesarsExamples() {
-        final String littleCa
+}
